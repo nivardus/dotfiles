@@ -1,7 +1,9 @@
 # Nivardus' Dotfiles
 
-My primitive dotfiles using [RCM](https://github.com/thoughtbot/rcm)
+My primitive dotfiles
 
 ### Usage
 
-Run `install.sh`, currently supports Arch Linux and OS X
+1. Checkout or unpack repo into ~/.dotfiles
+2. Run `install.sh`, to bootstrap. (Supported: Arch Linux and OS X.)
+3. Link with `$ rcup`
