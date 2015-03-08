@@ -1,9 +1,11 @@
 #!/bin/bash
 
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  ./bootstrap/linux.sh
+  "$DIR/bootstrap/linux.sh"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-  ./bootstrap/darwin.sh
+  "$DIR/bootstrap/darwin.sh"
 else
   echo "Unsupported OS $OSTYPE"
   return 1
@@ -22,9 +24,11 @@ curl -Sso ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/v
 
 # sensible.vim
 git clone git://github.com/tpope/vim-sensible.git ~/.vim/bundle/vim-sensible
+# vim-go
+git clone git://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
 
 if [[ ! -d ~/.vim/colors ]]; then
   mkdir -p ~/.vim/colors
 fi
 
-(cd ~/.vim/colors && curl -Sso https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim)
+curl -Sso ~/.vim/colors/monokai.vim https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim
