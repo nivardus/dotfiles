@@ -8,8 +8,6 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(rbenv init -)"
 
-alias serve="python2 -m SimpleHTTPServer"
-
 export GOPATH=$HOME/go
 export GOARCH=amd64
 
@@ -36,3 +34,7 @@ function docker_clean () {
 
 alias dfwd="docker_fwd"
 alias dclean="docker_clean"
+
+if [ -s ~/.machine ]; then
+  . ~/.machine
+fi

@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Running OS X bootstrap"
 
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
