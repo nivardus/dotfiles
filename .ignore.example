@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# dotfiles to skip
+
+IGNORE=(gitconfig profile)
