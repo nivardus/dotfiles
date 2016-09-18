@@ -1,6 +1,6 @@
 # nivardus/dotfiles
 
-My primitive dotfiles. Supports Arch Linux and OS X
+Primitive dotfiles supporting Arch Linux and OS X.
 
 ### Usage
 
