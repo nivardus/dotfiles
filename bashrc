@@ -3,3 +3,7 @@
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
+
+if [ -f "$HOME/.machine" ]; then
+  . "$HOME/.machine"
+fi

@@ -28,13 +28,14 @@ DOTFILES=(
 
 # git-based plugins
 REPOS=(
-  'https://github.com/ctrlpvim/ctrlp.vim.git'         "$HOME/.vim/bundle/ctrlp.vim"
-  'https://github.com/robbyrussell/oh-my-zsh.git'     "$HOME/.oh-my-zsh"
-  'https://github.com/scrooloose/nerdcommenter.git'   "$HOME/.vim/bundle/nerdcommenter"
-  'https://github.com/tmux-plugins/tmux-sensible.git' "$HOME/.tmux/plugins/tmux-sensible"
-  'https://github.com/tmux-plugins/tpm.git'           "$HOME/.tmux/plugins/tpm"
-  'https://github.com/tpope/vim-sensible.git'         "$HOME/.vim/bundle/vim-sensible"
-  'https://github.com/tpope/vim-surround.git'         "$HOME/.vim/bundle/vim-surround"
+  'https://github.com/ctrlpvim/ctrlp.vim.git'          "$HOME/.vim/bundle/ctrlp.vim"
+  'https://github.com/robbyrussell/oh-my-zsh.git'      "$HOME/.oh-my-zsh"
+  'https://github.com/scrooloose/nerdcommenter.git'    "$HOME/.vim/bundle/nerdcommenter"
+  'https://github.com/tmux-plugins/tmux-resurrect.git' "$HOME/.tmux/plugins/tmux-resurrect"
+  'https://github.com/tmux-plugins/tmux-sensible.git'  "$HOME/.tmux/plugins/tmux-sensible"
+  'https://github.com/tmux-plugins/tpm.git'            "$HOME/.tmux/plugins/tpm"
+  'https://github.com/tpope/vim-sensible.git'          "$HOME/.vim/bundle/vim-sensible"
+  'https://github.com/tpope/vim-surround.git'          "$HOME/.vim/bundle/vim-surround"
 )
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
