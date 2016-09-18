@@ -36,6 +36,7 @@ REPOS=(
   'https://github.com/tmux-plugins/tpm.git'            "$HOME/.tmux/plugins/tpm"
   'https://github.com/tpope/vim-sensible.git'          "$HOME/.vim/bundle/vim-sensible"
   'https://github.com/tpope/vim-surround.git'          "$HOME/.vim/bundle/vim-surround"
+  'https://github.com/tpope/vim-obsession.git'         "$HOME/.vim/bundle/vim-obsession"
 )
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
