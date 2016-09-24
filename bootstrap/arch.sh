@@ -12,7 +12,7 @@ if ! type "aura" > /dev/null; then
 (
   mkdir $AURA_TMP_DIR
   cd $AURA_TMP_DIR
-  curl -Ss $AURA_URL
+  curl -SsO $AURA_URL
   tar -xvf $AURA_TARBALL
   cd aura-bin
   makepkg -i
