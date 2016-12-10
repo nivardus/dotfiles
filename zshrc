@@ -8,5 +8,5 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 emulate sh
-. ~/.profile
+. ~/.bashrc
 emulate zsh
