@@ -1,3 +1,6 @@
 [user]
   name = Bennett Goble
   email = nivardus@gmail.com
+[alias]
+  co = checkout
+  br = branch
