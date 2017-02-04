@@ -32,6 +32,7 @@ REPOS=(
   'https://github.com/fatih/vim-go.git'                    "$HOME/.vim/bundle/vim-go"
   'https://github.com/junegunn/vim-easy-align.git'         "$HOME/.vim/bundle/vim-easy-align"
   'https://github.com/michaeljsmith/vim-indent-object.git' "$HOME/.vim/bundle/vim-indent-object"
+  'https://github.com/mileszs/ack.vim.git'                 "$HOME/.vim/bundle/ack.vim"
   'https://github.com/robbyrussell/oh-my-zsh.git'          "$HOME/.oh-my-zsh"
   'https://github.com/scrooloose/nerdcommenter.git'        "$HOME/.vim/bundle/nerdcommenter"
   'https://github.com/tmux-plugins/tmux-resurrect.git'     "$HOME/.tmux/plugins/tmux-resurrect"
