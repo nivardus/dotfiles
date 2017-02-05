@@ -4,3 +4,7 @@
 [alias]
   co = checkout
   br = branch
+  undo = reset @^ --mixed
+  amend = commit -a --amend
+[core]
+  editor = vim
