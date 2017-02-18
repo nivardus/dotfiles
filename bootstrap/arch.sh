@@ -5,7 +5,7 @@ AURA_TMP_DIR="/tmp/aura-bin-build"
 AURA_URL="https://aur.archlinux.org/cgit/aur.git/snapshot/$AURA_TARBALL"
 
 sudo pacman -Sy
-sudo pacman -S tmux git zsh vim curl abs gmp pcre the_silver_searcher --noconfirm --needed
+sudo pacman -S tmux git vim curl abs gmp pcre the_silver_searcher --noconfirm --needed
 
 # Install packer
 if ! type "aura" > /dev/null; then
@@ -21,6 +21,9 @@ if ! type "aura" > /dev/null; then
 )
 fi
 
-if [[ $SHELL != *"zsh" ]]; then
-  chsh -s $(which zsh)
+if [[ $DESIRED_SHELL == "zsh" ]]; then
+  sudo pacman -S zsh
+  if [[ $SHELL != *"zsh" ]]; then
+    chsh -s $(which zsh)
+  fi
 fi

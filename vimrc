@@ -37,3 +37,6 @@ endfunction
 
 " trialing white space (strip spaces)
 noremap <leader>ss :call StripWhitespace()<CR>
+
+" allow jsx syntax highlighting in all *.js files
+let g:jsx_ext_required = 0

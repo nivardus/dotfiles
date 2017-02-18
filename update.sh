@@ -1,13 +1,17 @@
 #!/bin/bash
 
-SKIP_INSTALL=false
+DESIRED_SHELL=bash
 HELP_TEXT="usage: update.sh [--skip-install]"
+SKIP_INSTALL=false
 
 for a in "$@"
 do
   case $a in
   '--skip-install')
     SKIP_INSTALL=true
+    ;;
+  '--shell')
+    DESIRED_SHELL=$a
     ;;
   *)
     echo $HELP_TEXT
@@ -19,21 +23,21 @@ done
 
 DOTFILES=(
   'bashrc'
-  'gitconfig'
   'tmux.conf'
   'vim'
   'vimrc'
-  'zshrc'
 )
 
 # git-based plugins
 REPOS=(
   'https://github.com/ctrlpvim/ctrlp.vim.git'              "$HOME/.vim/bundle/ctrlp.vim"
+  'https://github.com/danro/rename.vim.git'                "$HOME/.vim/bundle/rename.vim"
   'https://github.com/fatih/vim-go.git'                    "$HOME/.vim/bundle/vim-go"
   'https://github.com/junegunn/vim-easy-align.git'         "$HOME/.vim/bundle/vim-easy-align"
   'https://github.com/michaeljsmith/vim-indent-object.git' "$HOME/.vim/bundle/vim-indent-object"
   'https://github.com/mileszs/ack.vim.git'                 "$HOME/.vim/bundle/ack.vim"
-  'https://github.com/robbyrussell/oh-my-zsh.git'          "$HOME/.oh-my-zsh"
+  'https://github.com/mxw/vim-jsx.git'                     "$HOME/.vim/bundle/vim-jsx"
+  'https://github.com/pangloss/vim-javascript.git'         "$HOME/.vim/bundle/vim-javascript"
   'https://github.com/scrooloose/nerdcommenter.git'        "$HOME/.vim/bundle/nerdcommenter"
   'https://github.com/tmux-plugins/tmux-resurrect.git'     "$HOME/.tmux/plugins/tmux-resurrect"
   'https://github.com/tmux-plugins/tmux-sensible.git'      "$HOME/.tmux/plugins/tmux-sensible"
@@ -42,6 +46,11 @@ REPOS=(
   'https://github.com/tpope/vim-sensible.git'              "$HOME/.vim/bundle/vim-sensible"
   'https://github.com/tpope/vim-surround.git'              "$HOME/.vim/bundle/vim-surround"
 )
+
+if [[ $DESIRED_SHELL == 'zsh' ]]; then
+  DOTFILES+=('zshrc')
+  REPOS+=('https://github.com/robbyrussell/oh-my-zsh.git' "$HOME/.oh-my-zsh")
+fi
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
@@ -78,11 +87,9 @@ install_and_update () {
   mkdir -p ~/.vim/autoload ~/.vim/bundle
   curl -Sso ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
-
   echo "Installing monokai vim theme"
   mkdir -p ~/.vim/colors
   curl -Sso ~/.vim/colors/monokai.vim https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim
-
 
   mkdir -p ~/.tmux/plugins
 
