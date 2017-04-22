@@ -30,10 +30,13 @@ DOTFILES=(
 
 # git-based plugins
 REPOS=(
+  'https://github.com/benmills/vimux.git'                  "$HOME/.vim/bundle/vimux"
+  'https://github.com/christoomey/vim-tmux-navigator.git'  "$HOME/.vim/bundle/vim-tmux-navigator"
   'https://github.com/ctrlpvim/ctrlp.vim.git'              "$HOME/.vim/bundle/ctrlp.vim"
   'https://github.com/danro/rename.vim.git'                "$HOME/.vim/bundle/rename.vim"
   'https://github.com/fatih/vim-go.git'                    "$HOME/.vim/bundle/vim-go"
   'https://github.com/junegunn/vim-easy-align.git'         "$HOME/.vim/bundle/vim-easy-align"
+  'https://github.com/kana/vim-arpeggio.git'               "$HOMe/.vim/bundle/vim-arpeggio"
   'https://github.com/michaeljsmith/vim-indent-object.git' "$HOME/.vim/bundle/vim-indent-object"
   'https://github.com/mileszs/ack.vim.git'                 "$HOME/.vim/bundle/ack.vim"
   'https://github.com/mxw/vim-jsx.git'                     "$HOME/.vim/bundle/vim-jsx"

@@ -1,17 +1,28 @@
 execute pathogen#infect()
 colorscheme monokai
 
+set swapfile
+set dir=~/tmp
+
 set hlsearch
 set number
 set mouse=a
-set shell=zsh\ -i
 
 let mapleader=','
+
+" vv to generate new vertical split
+nnoremap <silent> vv <C-w>v
+
+" ctrlp configuration
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_custom_ignore = {
   \ 'dir': '\.git$\|\.hg$\|\.svn$\|vendor$\|node_modules$',
   \ 'file': '\.exe$\|\.so$\|\.dat$'
   \ }
+
+" vimux
+map <Leader>vp :VimuxPromptCommand<CR>
+map <Leader>vl :VimuxRunLastCommand<CR>
 
 " start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
