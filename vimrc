@@ -1,9 +1,6 @@
 execute pathogen#infect()
 colorscheme monokai
 
-set swapfile
-set dir=~/tmp
-
 set hlsearch
 set number
 set mouse=a

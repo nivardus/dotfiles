@@ -3,10 +3,16 @@
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 DISTRO=`gawk -F= '/^NAME/{print $2}' /etc/os-release`
 
-if [[ $DISTRO == '"Arch Linux"' ]]; then
+case "$DISTRO" in
+'"Arch Linux"')
   "$DIR/arch.sh"
-elif [[ $DISTRO == '"Debian GNU/Linux"' ]]; then
+  ;;
+'"Debian GNU/Linux"')
   "$DIR/debian.sh"
-else
+  ;;
+'"Alpine Linux"')
+  "$DIR/alpine.sh"
+  ;;
+*)
   echo "No installation script for $DISTRO"
-fi  
+esac

@@ -77,7 +77,7 @@ clone_or_update_git_repo () {
 }
 
 install_and_update () {
-  if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  if [[ "$OSTYPE" == "linux-gnu" || "$OSTYPE" == "linux-musl" ]]; then
     "$DIR/bootstrap/linux.sh"
   elif [[ "$OSTYPE" == "darwin"* ]]; then
     "$DIR/bootstrap/darwin.sh"
