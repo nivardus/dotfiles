@@ -1,6 +1,9 @@
 execute pathogen#infect()
 colorscheme monokai
 
+set swapfile
+set dir=~/tmp
+set backupcopy=yes
 set hlsearch
 set number
 set mouse=a
@@ -48,3 +51,8 @@ noremap <leader>ss :call StripWhitespace()<CR>
 
 " allow jsx syntax highlighting in all *.js files
 let g:jsx_ext_required = 0
+
+if &diff
+  map ] ]c
+  map [ [c
+endif
