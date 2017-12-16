@@ -1,7 +1,8 @@
 #!/bin/bash
 
 DESIRED_SHELL=bash
-HELP_TEXT="usage: update.sh [--skip-install]"
+DESKTOP=false
+HELP_TEXT="usage: update.sh [--skip-install] [--zsh] [--desktop]"
 SKIP_INSTALL=false
 
 for a in "$@"
@@ -10,8 +11,11 @@ do
   '--skip-install')
     SKIP_INSTALL=true
     ;;
-  '--shell')
-    DESIRED_SHELL=$a
+  '--zsh')
+    DESIRED_SHELL='zsh'
+    ;;
+  '--desktop')
+    DESKTOP=true
     ;;
   *)
     echo $HELP_TEXT
@@ -26,6 +30,11 @@ DOTFILES=(
   'tmux.conf'
   'vim'
   'vimrc'
+)
+
+DESKTOP_DOTFILES=(
+  'config',
+  'Xresources'
 )
 
 # git-based plugins
@@ -62,6 +71,9 @@ if [[ -f '$DIR/.ignore' ]]; then
   source "$DIR/.ignore"
 fi
 
+# Create local tmp dir for vim swap files
+mkdir -p "$HOME/tmp"
+
 clone_or_update_git_repo () {
   repo=$1
   path=$2
@@ -94,6 +106,10 @@ install_and_update () {
   mkdir -p ~/.vim/colors
   curl -Sso ~/.vim/colors/monokai.vim https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim
 
+  echo "Installing onedark vim theme"
+  curl -Sso ~/.vim/colors/onedark.vim https://raw.githubusercontent.com/joshdick/onedark.vim/master/colors/onedark.vim
+  curl -Sso ~/.vim/autoload/onedark.vim https://raw.githubusercontent.com/joshdick/onedark.vim/master/autoload/onedark.vim
+
   mkdir -p ~/.tmux/plugins
 
   # Update or install git-based plugins
@@ -106,7 +122,7 @@ install_and_update () {
 }
 
 link_dotfiles () {
-  for i in ${DOTFILES[@]}
+  for i in ${arg1[@]}
   do
     if [[ ! $IGNORE =~ $i ]]; then
       if [[ -f "$DIR/$i" ]]; then
@@ -133,4 +149,10 @@ if ! $SKIP_INSTALL ; then
   install_and_update
 fi
 
-link_dotfiles
+echo "Linking dotfiles"
+link_dotfiles $DOTFILES
+
+if $DESKTOP ; then
+  echo "Linking desktop dotfiles"
+  link_dotfiles $DESKTOP_DOTFILES
+fi

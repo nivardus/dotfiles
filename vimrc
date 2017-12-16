@@ -1,9 +1,9 @@
 execute pathogen#infect()
-colorscheme monokai
+colorscheme onedark
 
-set swapfile
-set dir=~/tmp
-set backupcopy=yes
+"set swapfile
+"set dir=~/tmp
+"set backupcopy=yes
 set hlsearch
 set number
 set mouse=a
