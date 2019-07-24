@@ -49,7 +49,7 @@ rofi.lines: 3
 rofi.hide-scrollbar: true
 rofi.eh: 2
 
-Xft.dpi: 162
+Xft.dpi: 144
 
 Xcursor.theme: Adwaita
 Xcursor.size: 16 

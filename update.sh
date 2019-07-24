@@ -33,7 +33,7 @@ DOTFILES=(
 )
 
 DESKTOP_DOTFILES=(
-  'config',
+  'config'
   'Xresources'
 )
 
@@ -122,7 +122,8 @@ install_and_update () {
 }
 
 link_dotfiles () {
-  for i in ${arg1[@]}
+  args=("$@")
+  for i in "${args[@]}" 
   do
     if [[ ! $IGNORE =~ $i ]]; then
       if [[ -f "$DIR/$i" ]]; then
@@ -150,9 +151,9 @@ if ! $SKIP_INSTALL ; then
 fi
 
 echo "Linking dotfiles"
-link_dotfiles $DOTFILES
+link_dotfiles "${DOTFILES[@]}"
 
 if $DESKTOP ; then
   echo "Linking desktop dotfiles"
-  link_dotfiles $DESKTOP_DOTFILES
+  link_dotfiles "${DESKTOP_DOTFILES[@]}"
 fi
