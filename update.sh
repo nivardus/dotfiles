@@ -2,7 +2,7 @@
 
 DESIRED_SHELL=bash
 DESKTOP=false
-HELP_TEXT="usage: update.sh [--skip-install] [--zsh] [--desktop]"
+HELP_TEXT="usage: update.sh [--skip-install] [--desktop]"
 SKIP_INSTALL=false
 
 for a in "$@"
@@ -10,9 +10,6 @@ do
   case $a in
   '--skip-install')
     SKIP_INSTALL=true
-    ;;
-  '--zsh')
-    DESIRED_SHELL='zsh'
     ;;
   '--desktop')
     DESKTOP=true
@@ -39,30 +36,18 @@ DESKTOP_DOTFILES=(
 
 # git-based plugins
 REPOS=(
-  'https://github.com/benmills/vimux.git'                  "$HOME/.vim/bundle/vimux"
-  'https://github.com/christoomey/vim-tmux-navigator.git'  "$HOME/.vim/bundle/vim-tmux-navigator"
-  'https://github.com/ctrlpvim/ctrlp.vim.git'              "$HOME/.vim/bundle/ctrlp.vim"
-  'https://github.com/danro/rename.vim.git'                "$HOME/.vim/bundle/rename.vim"
-  #'https://github.com/fatih/vim-go.git'                    "$HOME/.vim/bundle/vim-go"
-  'https://github.com/junegunn/vim-easy-align.git'         "$HOME/.vim/bundle/vim-easy-align"
-  'https://github.com/kana/vim-arpeggio.git'               "$HOME/.vim/bundle/vim-arpeggio"
-  'https://github.com/michaeljsmith/vim-indent-object.git' "$HOME/.vim/bundle/vim-indent-object"
-  'https://github.com/mileszs/ack.vim.git'                 "$HOME/.vim/bundle/ack.vim"
-  'https://github.com/mxw/vim-jsx.git'                     "$HOME/.vim/bundle/vim-jsx"
-  'https://github.com/pangloss/vim-javascript.git'         "$HOME/.vim/bundle/vim-javascript"
-  'https://github.com/scrooloose/nerdcommenter.git'        "$HOME/.vim/bundle/nerdcommenter"
-  'https://github.com/tmux-plugins/tmux-resurrect.git'     "$HOME/.tmux/plugins/tmux-resurrect"
+  'https://github.com/benmills/vimux.git'                  "$HOME/.vim/pack/plugins/start/vimux"
+  'https://github.com/christoomey/vim-tmux-navigator.git'  "$HOME/.vim/pack/plugins/start/vim-tmux-navigator"
+  'https://github.com/ctrlpvim/ctrlp.vim.git'              "$HOME/.vim/pack/plugins/start/ctrlp.vim"
+  'https://github.com/danro/rename.vim.git'                "$HOME/.vim/pack/plugins/start/rename.vim"
+  'https://github.com/junegunn/vim-easy-align.git'         "$HOME/.vim/pack/plugins/start/vim-easy-align"
+  'https://github.com/michaeljsmith/vim-indent-object.git' "$HOME/.vim/pack/plugins/start/vim-indent-object"
+  'https://github.com/scrooloose/nerdcommenter.git'        "$HOME/.vim/pack/plugins/start/nerdcommenter"
   'https://github.com/tmux-plugins/tmux-sensible.git'      "$HOME/.tmux/plugins/tmux-sensible"
   'https://github.com/tmux-plugins/tpm.git'                "$HOME/.tmux/plugins/tpm"
-  'https://github.com/tpope/vim-obsession.git'             "$HOME/.vim/bundle/vim-obsession"
-  'https://github.com/tpope/vim-sensible.git'              "$HOME/.vim/bundle/vim-sensible"
-  'https://github.com/tpope/vim-surround.git'              "$HOME/.vim/bundle/vim-surround"
+  'https://github.com/tpope/vim-sensible.git'              "$HOME/.vim/pack/plugins/start/vim-sensible"
+  'https://github.com/tpope/vim-surround.git'              "$HOME/.vim/pack/plugins/start/vim-surround"
 )
-
-if [[ $DESIRED_SHELL == 'zsh' ]]; then
-  DOTFILES+=('zshrc')
-  REPOS+=('https://github.com/robbyrussell/oh-my-zsh.git' "$HOME/.oh-my-zsh")
-fi
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
