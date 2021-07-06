@@ -1,4 +1,4 @@
-execute pathogen#infect()
+packadd! onedark.vim
 colorscheme onedark
 
 "set swapfile

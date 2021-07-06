@@ -137,9 +137,6 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 assign [class="do-not-directly-run-firestorm-bin"] $workspace8
 for_window [class="Spotify"] move to workspace $workspace10
 
-# startup
-exec --no-startup-id spotify --force-device-scale-factor=1.5
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -212,8 +209,8 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-exec_always feh --bg-scale /home/nivardus/Pictures/wallpaper.jpg
-exec compton -f
+exec_always feh --bg-scale /home/nivardus/img/wallpaper/wallpaper.jpg
+#exec compton -f
 
 # Open an empty container
 bindsym $mod+o open

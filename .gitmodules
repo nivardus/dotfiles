@@ -1,0 +1,30 @@
+[submodule "vim/pack/vendor/opt/onedark.vim"]
+	path = vim/pack/vendor/opt/onedark.vim
+	url = https://github.com/joshdick/onedark.vim.git
+[submodule "vim/pack/vendor/start/ctrlp.vim"]
+	path = vim/pack/vendor/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "vim/pack/vendor/start/nerdcommenter"]
+	path = vim/pack/vendor/start/nerdcommenter
+	url = https://github.com/preservim/nerdcommenter.git
+[submodule "vim/pack/vendor/start/vim-easy-align"]
+	path = vim/pack/vendor/start/vim-easy-align
+	url = https://github.com/junegunn/vim-easy-align.git
+[submodule "vim/pack/vendor/start/vim-sensible"]
+	path = vim/pack/vendor/start/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
+[submodule "vim/pack/vendor/start/vim-surround"]
+	path = vim/pack/vendor/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/pack/vendor/start/vim-tmux-navigator"]
+	path = vim/pack/vendor/start/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
+[submodule "tmux/plugins/tmux-sensible"]
+	path = tmux/plugins/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible.git
+[submodule "config/kitty/kitty-themes"]
+	path = config/kitty/kitty-themes
+	url = https://github.com/dexpota/kitty-themes.git

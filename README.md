@@ -1,9 +1,20 @@
 # nivardus/dotfiles
 
-Primitive dotfiles supporting Arch Linux, Debian and OS X.
+Primitive dotfiles.
 
-### Usage
+## Use
 
-1. Checkout or unpack repo into ~/.dotfiles
-2. Add any files that should be skipped to `.ignore`
-3. Run `update.sh`, to bootstrap and create symlinks to dotfiles
+Requirements: [rcm][]
+
+1. Pull git submodules using `git submodule init`
+2. Install dotfiles with `rcup`
+
+### RCM Tags
+
+- `alpine` - Alpine
+- `arch` - Arch Linux
+- `debian` - Debian
+- `home` - Personal configuration
+- `i3` - i3 Window Manager 
+
+[rcm]: https://github.com/thoughtbot/rcm
